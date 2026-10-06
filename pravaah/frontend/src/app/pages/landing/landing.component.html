@@ -1,0 +1,928 @@
+<div class="landing-page-root">
+  <!-- 1. FULL-SCREEN SILENT INTRO BACKGROUND VIDEO -->
+  <div class="cinematic-backdrop">
+    <video #bgVideo class="backdrop-video" [class.video-loaded]="isVideoLoaded" autoplay muted loop playsinline
+      preload="auto" poster="assets/pravaah-hero-bg.jpg" (canplay)="onVideoCanPlay()" (loadeddata)="onVideoCanPlay()">
+      <source src="assets/gemini_generated_video_3c0cd6d7.mp4" type="video/mp4">
+    </video>
+
+    <!-- Subtle Cinematic Gradient Overlays (Crowd Remains Highly Visible) -->
+    <div class="backdrop-gradient-h"></div>
+    <div class="backdrop-vignette"></div>
+    <div class="backdrop-gradient-v"></div>
+
+    <!-- Flowing Cybernetic Neon Data Wave Behind Typography -->
+    <div class="cyber-data-wave"></div>
+
+    <!-- Non-intrusive Event Environment Scenario Tag -->
+    <div class="video-scenario-tag">
+      <span class="scenario-dot"></span>
+      <span>PRAVAAH EVENT SCENARIO · PRAYAGRAJ</span>
+    </div>
+  </div>
+
+  <!-- 2. TOP GLASS NAVIGATION BAR (64-72px, Minimal & Elegant) -->
+  <header class="top-nav-glass">
+    <div class="nav-container">
+      <!-- Left: Pravaah Logo -->
+      <a routerLink="/" class="nav-brand">
+        <svg class="brand-logo-icon" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="16" stroke="url(#nav-logo-grad)" stroke-width="2.5" stroke-dasharray="75 25" />
+          <path d="M9 18c3-4 6-4 9 0s6 4 9 0" stroke="#00C6FF" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M11 22c2.5-3 5-3 7.5 0s5 3 7.5 0" stroke="#1677FF" stroke-width="2" stroke-linecap="round" />
+          <defs>
+            <linearGradient id="nav-logo-grad" x1="0" y1="0" x2="36" y2="36">
+              <stop offset="0%" stop-color="#00C6FF" />
+              <stop offset="100%" stop-color="#1677FF" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="brand-title-text">Pravaah</span>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <nav class="nav-links">
+        <a href="#platform" class="nav-link">Platform</a>
+        <a href="#workflow" class="nav-link">How It Works</a>
+        <a routerLink="/operator" class="nav-link">Live Operations</a>
+        <a href="#safety" class="nav-link">Safety</a>
+        <a href="#visitor" class="nav-link">About</a>
+      </nav>
+
+      <!-- Right: Operational Status & Enter Platform -->
+      <div class="nav-actions">
+        <div class="status-pill">
+          <span class="status-pulse-dot"></span>
+          <span class="status-label">SYSTEM OPERATIONAL</span>
+        </div>
+        <a routerLink="/operator" class="btn-enter-platform">
+          <span>ENTER PLATFORM</span>
+          <span class="btn-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. MAIN CONTENT CONTAINER -->
+  <main class="landing-main" id="platform">
+    <!-- HERO SECTION (Two-Column Layout) -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <!-- LEFT COLUMN: Brand Display, Headline, Copy, CTAs, Hero Metrics -->
+        <div class="hero-left-col">
+          <!-- Stylized Cybernetic PRAVAAH Wordmark & Wave -->
+          <div class="hero-brand-display">
+            <span class="cyber-brand-text">PRAVAAH</span>
+            <svg class="cyber-brand-wave" viewBox="0 0 180 32" fill="none">
+              <path d="M4 16 C30 4, 60 28, 90 16 C120 4, 150 28, 176 16" stroke="url(#brand-wave-grad)"
+                stroke-width="4.5" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="brand-wave-grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#00C6FF" />
+                  <stop offset="50%" stop-color="#1677FF" />
+                  <stop offset="100%" stop-color="#00D6A3" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <!-- Main Hero Headline (Space Grotesk 700) -->
+          <h1 class="hero-main-title">
+            <span class="title-line title-white">SMARTER CROWDS.</span><br>
+            <span class="title-line title-cyan">SAFER ROUTES.</span><br>
+            <span class="title-line title-stronger">STRONGER EVENTS.<span class="typing-cursor">_</span></span>
+          </h1>
+
+          <!-- Compact PRAVAAH Description (Inter) -->
+          <p class="hero-description">
+
+          </p>
+
+          <!-- Hero Buttons -->
+          <div class="hero-actions-row">
+            <a routerLink="/visitor" class="btn-hero-primary">
+              <span>EXPLORE EVENTS</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a routerLink="/operator" class="btn-hero-secondary">
+              <span>OPERATOR COMMAND CENTER</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+
+          <!-- Quick Platform Metrics (4 Compact Cards) -->
+          <div class="quick-metrics-grid">
+            <div class="quick-metric-card">
+              <div class="qm-icon-wrap qm-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>
+              </div>
+              <div class="qm-content">
+                <span class="qm-value">7</span>
+                <span class="qm-label">Mega Events</span>
+              </div>
+            </div>
+
+            <div class="quick-metric-card">
+              <div class="qm-icon-wrap qm-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="qm-content">
+                <span class="qm-value">25+</span>
+                <span class="qm-label">Event Locations</span>
+              </div>
+            </div>
+
+            <div class="quick-metric-card">
+              <div class="qm-icon-wrap qm-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="qm-content">
+                <span class="qm-value">10M+</span>
+                <span class="qm-label">People Handled</span>
+              </div>
+            </div>
+
+            <div class="quick-metric-card">
+              <div class="qm-icon-wrap qm-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="qm-content">
+                <span class="qm-value">Safer</span>
+                <span class="qm-label">Public Movement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: UNIQUE CIRCULAR PRAVAAH MAP (Real Leaflet GIS) -->
+        <div class="hero-right-col" id="preview">
+          <div class="operational-map-panel">
+            <!-- Panel Header: Event Selector & Crowd Density -->
+            <div class="map-panel-header">
+              <!-- Event Dropdown Pill -->
+              <div class="event-selector-pill" (click)="toggleDropdown($event)">
+                <span class="event-pulse-indicator"></span>
+                <div class="event-meta">
+                  <span class="event-name">{{ selectedEvent?.name || 'Maha Kumbh Mela' }}</span>
+                  <span class="event-location">{{ selectedEvent?.location || 'Prayagraj, Uttar Pradesh' }}</span>
+                </div>
+                <span class="event-chevron" [class.open]="dropdownOpen">▾</span>
+
+                <!-- Dropdown Menu -->
+                <div class="event-dropdown-menu" *ngIf="dropdownOpen" (click)="$event.stopPropagation()">
+                  <div 
+                    class="event-dropdown-item" 
+                    *ngFor="let ev of events" 
+                    [class.selected]="selectedEvent?.id === ev.id"
+                    (click)="selectEvent(ev, $event)"
+                  >
+                    <span class="edi-title">{{ ev.name }}</span>
+                    <span class="edi-loc">{{ ev.location }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Crowd Density Telemetry -->
+              <div class="telemetry-density-badge">
+                <div class="density-icon-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                  </svg>
+                </div>
+                <div class="density-text-block">
+                  <span class="density-sub">CROWD DENSITY</span>
+                  <span class="density-status-text">{{ currentGeoConfig.densityText }}</span>
+                  <span class="density-percent-num">{{ currentGeoConfig.densityPercent }}%</span>
+                </div>
+                <div class="density-bars-indicator">
+                  <span class="bar-col col-1"></span>
+                  <span class="bar-col col-2"></span>
+                  <span class="bar-col col-3"></span>
+                  <span class="bar-col col-4"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- REALISTIC RECTANGULAR LEAFLET MAP CONTAINER -->
+            <div class="realistic-map-wrapper">
+              <!-- Top-Left Navigation Controls (Zoom In, Zoom Out, Locate) matching Reference Screenshot -->
+              <div class="map-floating-controls">
+                <button type="button" class="map-ctrl-btn" (click)="zoomIn()" title="Zoom In">+</button>
+                <button type="button" class="map-ctrl-btn" (click)="zoomOut()" title="Zoom Out">−</button>
+                <button type="button" class="map-ctrl-btn ctrl-gps" (click)="locateUser()" title="My Location / Re-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <circle cx="12" cy="12" r="7" />
+                    <line x1="12" y1="2" x2="12" y2="5" />
+                    <line x1="12" y1="19" x2="12" y2="22" />
+                    <line x1="2" y1="12" x2="5" y2="12" />
+                    <line x1="19" y1="12" x2="22" y2="12" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Real Leaflet Map Viewport -->
+              <div class="rectangular-leaflet-viewport">
+                <div #circularLeafletMap id="landingLeafletMap" class="leaflet-map-element"></div>
+              </div>
+
+              <!-- OpenStreetMap Required Attribution -->
+              <div class="map-osm-attribution-pill">
+                <span>Leaflet | © OpenStreetMap contributors · Esri</span>
+              </div>
+            </div>
+
+            <!-- Map Panel Footer (Truthful Labeling) -->
+            <div class="map-panel-footer">
+              <div class="preview-mode-tag">
+                <span class="live-dot-green"></span>
+                <span>{{ isLiveBackend ? 'LIVE OPERATIONS' : 'DEMO OPERATIONS' }}</span>
+              </div>
+              <a routerLink="/operator" class="btn-expand-map" title="Open Full Command Center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA RIVER TRANSITION -->
+    <div class="data-river-section">
+      <svg class="data-river-svg" viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+        <path d="M0,45 C360,10 720,80 1080,25 C1260,0 1380,55 1440,45" stroke="url(#data-river-gradient)"
+          stroke-width="2.5" stroke-dasharray="12 8" class="animated-river-stream" />
+        <defs>
+          <linearGradient id="data-river-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1677FF" stop-opacity="0.2" />
+            <stop offset="50%" stop-color="#00C6FF" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#00D6A3" stop-opacity="0.3" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="data-river-tag">
+        <span>PEOPLE</span>
+        <span class="arr">→</span>
+        <span>DATA</span>
+        <span class="arr">→</span>
+        <span>INTELLIGENCE</span>
+        <span class="arr">→</span>
+        <span>ACTION</span>
+      </div>
+    </div>
+
+    <!-- 4. WORKFLOW SECTION: OBSERVE → PREDICT → RECOMMEND → ACT → MEASURE -->
+    <section class="workflow-section" id="workflow">
+      <div class="section-header-center">
+        <h2 class="section-title">FROM OBSERVATION TO ACTION</h2>
+        <p class="section-subtitle">A closed-loop intelligence workflow for complex public events.</p>
+      </div>
+
+      <div class="workflow-nodes-container">
+        <!-- 01 OBSERVE -->
+        <div class="workflow-node node-observe">
+          <div class="node-glow-ring"></div>
+          <div class="node-number">01</div>
+          <div class="node-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <div class="node-content">
+            <h3 class="node-title">OBSERVE</h3>
+            <p class="node-desc">Understand crowd movement.</p>
+          </div>
+        </div>
+
+        <div class="workflow-arrow-connector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <!-- 02 PREDICT -->
+        <div class="workflow-node node-predict">
+          <div class="node-glow-ring"></div>
+          <div class="node-number">02</div>
+          <div class="node-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
+          </div>
+          <div class="node-content">
+            <h3 class="node-title">PREDICT</h3>
+            <p class="node-desc">Identify emerging pressure.</p>
+          </div>
+        </div>
+
+        <div class="workflow-arrow-connector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <!-- 03 RECOMMEND -->
+        <div class="workflow-node node-recommend">
+          <div class="node-glow-ring"></div>
+          <div class="node-number">03</div>
+          <div class="node-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" />
+            </svg>
+          </div>
+          <div class="node-content">
+            <h3 class="node-title">RECOMMEND</h3>
+            <p class="node-desc">Generate safer movement options.</p>
+          </div>
+        </div>
+
+        <div class="workflow-arrow-connector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <!-- 04 ACT -->
+        <div class="workflow-node node-act">
+          <div class="node-glow-ring"></div>
+          <div class="node-number">04</div>
+          <div class="node-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+          </div>
+          <div class="node-content">
+            <h3 class="node-title">ACT</h3>
+            <p class="node-desc">Coordinate response.</p>
+          </div>
+        </div>
+
+        <div class="workflow-arrow-connector">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        <!-- 05 MEASURE -->
+        <div class="workflow-node node-measure">
+          <div class="node-glow-ring"></div>
+          <div class="node-number">05</div>
+          <div class="node-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18" />
+              <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+            </svg>
+          </div>
+          <div class="node-content">
+            <h3 class="node-title">MEASURE</h3>
+            <p class="node-desc">Evaluate outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LIVE CROWD INTELLIGENCE PREVIEW (Section 14) -->
+    <section class="live-intel-section">
+      <div class="section-header-center">
+        <div class="intel-tag-badge">
+          <span class="intel-tag-dot"></span>
+          <span>{{ isLiveBackend ? 'LIVE OPERATIONS' : 'DEMO OPERATIONS' }}</span>
+        </div>
+        <h2 class="section-title">LIVE CROWD INTELLIGENCE</h2>
+        <p class="section-subtitle">Real-time multi-sensor telemetry & predictive geospatial monitoring.</p>
+      </div>
+
+      <div class="intel-cards-grid">
+        <!-- Card 1: Crowd Density -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">CROWD DENSITY</span>
+            <span class="badge-status status-critical">VERY HIGH 92%</span>
+          </div>
+          <div class="intel-card-body">
+            <div class="density-breakdown">
+              <div class="db-bar">
+                <span class="db-fill-red" style="width: 92%"></span>
+              </div>
+              <div class="db-legend">
+                <span>Core Sangam: <strong>92%</strong></span>
+                <span>Threshold: <strong>75%</strong></span>
+              </div>
+            </div>
+            <p class="intel-card-note">Peak saturation detected along eastern approach bridge.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Gate Status -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">GATE STATUS</span>
+            <span class="badge-status status-warning">3 ACTIVE GATES</span>
+          </div>
+          <div class="intel-card-body">
+            <div class="gate-status-rows">
+              <div class="gs-row">
+                <span class="gs-name">Gate 1 (Parade)</span>
+                <span class="gs-val text-warning">MODERATE (64%)</span>
+              </div>
+              <div class="gs-row">
+                <span class="gs-name">Gate 2 (Sangam)</span>
+                <span class="gs-val text-critical">CONGESTED (92%)</span>
+              </div>
+              <div class="gs-row">
+                <span class="gs-name">Gate 3 (Arail)</span>
+                <span class="gs-val text-success">OPEN (38%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Crowd Flow -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">CROWD FLOW</span>
+            <span class="badge-status status-cyan">840 / MIN</span>
+          </div>
+          <div class="intel-card-body">
+            <div class="flow-metric-display">
+              <span class="flow-num">840</span>
+              <span class="flow-unit">pilgrims / min</span>
+            </div>
+            <p class="intel-card-note">Flow rate accelerating +14% compared to historical baseline.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Safe Route -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">SAFE ROUTE</span>
+            <span class="badge-status status-success">DIVERSION ACTIVE</span>
+          </div>
+          <div class="intel-card-body">
+            <div class="safe-route-telemetry">
+              <span class="sr-target">Sangam → Pontoon Bridge 3 → Gate 3</span>
+              <span class="sr-eta">ETA: <strong>12 min</strong> (Saves 24 min)</span>
+            </div>
+            <p class="intel-card-note">Broadcasting route update to visitor mobile web interfaces.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Incidents -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">INCIDENTS</span>
+            <span class="badge-status status-critical">02 ACTIVE</span>
+          </div>
+          <div class="intel-card-body">
+            <ul class="incidents-mini-list">
+              <li><strong>INC-01:</strong> Gate 2 queue surge (Marshals dispatched)</li>
+              <li><strong>INC-02:</strong> Child separated at Sector 4 (Resolved nearby)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 6: Alerts -->
+        <div class="intel-card">
+          <div class="intel-card-header">
+            <span class="intel-card-title">ALERTS</span>
+            <span class="badge-status status-cyan">TELEMETRY SYNCED</span>
+          </div>
+          <div class="intel-card-body">
+            <div class="alerts-feed-mini">
+              <div class="af-item">
+                <span class="af-dot"></span>
+                <span>Gate 2 pressure warning triggered (+18% spike).</span>
+              </div>
+              <div class="af-item">
+                <span class="af-dot dot-green"></span>
+                <span>Gate 3 shuttle frequency doubled by transit ops.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DUAL EXPERIENCE SHOWCASE CARDS (Visitor & Operator) -->
+    <section class="experiences-section" id="visitor">
+      <div class="experiences-grid">
+        <!-- VISITOR EXPERIENCE (Section 15) -->
+        <div class="experience-showcase-card visitor-showcase">
+          <div class="showcase-visual-col phone-col">
+            <div class="phone-frame-mockup">
+              <img src="assets/pravaah-visitor-phone.jpg" alt="Visitor Live Route Mobile Experience"
+                class="mockup-img" />
+              <div class="phone-glow-overlay"></div>
+              <div class="phone-safe-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="6" cy="19" r="3" />
+                  <path d="M9 19h8.5a4.5 4.5 0 0 0 4.5-4.5v-1a4.5 4.5 0 0 0-4.5-4.5H11" />
+                  <circle cx="18" cy="5" r="3" />
+                </svg>
+                <span>Safe Route: Gate 3 · 12 min</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-content-col">
+            <div class="showcase-badge-pill badge-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+              </svg>
+              <span>MOBILE-FIRST</span>
+            </div>
+
+            <h2 class="showcase-heading">VISITOR EXPERIENCE</h2>
+            <p class="showcase-summary">
+              Plan your journey, monitor crowd conditions, receive route updates and request assistance when conditions
+              change.
+            </p>
+
+            <!-- 10 Visitor Features as specified in Section 15 -->
+            <div class="feature-pills-row">
+              <div class="feat-pill"><span class="feat-dot"></span>Explore Events</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Crowd Alerts</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Safe Routes</div>
+              <div class="feat-pill pill-alert"><span class="feat-dot"></span>I'M STUCK</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Nearest Safe Place</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Medical Help</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Police / Help</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Share Location</div>
+              <div class="feat-pill pill-red"><span class="feat-dot"></span>SOS</div>
+              <div class="feat-pill"><span class="feat-dot"></span>Offline Mode</div>
+            </div>
+
+            <div class="showcase-action-wrap">
+              <a routerLink="/visitor" class="btn-showcase-primary btn-blue-grad">
+                <span>EXPLORE VISITOR EXPERIENCE</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- OPERATOR COMMAND CENTER (Section 16) -->
+        <div class="experience-showcase-card operator-showcase">
+          <div class="showcase-content-col">
+            <div class="showcase-badge-pill badge-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <span>DESKTOP COMMAND CENTER</span>
+            </div>
+
+            <h2 class="showcase-heading">OPERATOR COMMAND CENTER</h2>
+            <p class="showcase-summary">
+              Real-time geospatial map, camera feeds, forecast models, and human-in-the-loop intervention dispatch.
+            </p>
+
+            <!-- 10 Operator Features as specified in Section 16 -->
+            <div class="feature-pills-row">
+              <div class="feat-pill"><span class="feat-dot"></span>EVENT</div>
+              <div class="feat-pill"><span class="feat-dot"></span>CROWD</div>
+              <div class="feat-pill"><span class="feat-dot"></span>GATES</div>
+              <div class="feat-pill"><span class="feat-dot"></span>ZONES</div>
+              <div class="feat-pill"><span class="feat-dot"></span>CAMERAS</div>
+              <div class="feat-pill"><span class="feat-dot"></span>PREDICTION</div>
+              <div class="feat-pill"><span class="feat-dot"></span>ALERTS</div>
+              <div class="feat-pill"><span class="feat-dot"></span>INTERVENTIONS</div>
+              <div class="feat-pill"><span class="feat-dot"></span>VISITOR REPORTS</div>
+              <div class="feat-pill"><span class="feat-dot"></span>EMERGENCIES</div>
+            </div>
+
+            <div class="showcase-action-wrap">
+              <a routerLink="/operator" class="btn-showcase-primary btn-amber-grad">
+                <span>ENTER COMMAND CENTER</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="showcase-visual-col screens-col">
+            <div class="screens-frame-mockup">
+              <img src="assets/pravaah-operator-bg.jpg" alt="Operator Command Center Displays Wall"
+                class="screens-img" />
+              <div class="screens-glow-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CROWD ANALYSIS STUDIO WORKFLOW (Section 17) -->
+    <section class="crowd-analysis-section">
+      <div class="section-header-center">
+        <div class="intel-tag-badge badge-demo">
+          <span class="intel-tag-dot dot-amber"></span>
+          <span>DEMO ANALYSIS</span>
+        </div>
+        <h2 class="section-title">OPTICAL FLOW CROWD ANALYSIS</h2>
+        <p class="section-subtitle">Automated density estimation and bottleneck identification pipeline.</p>
+      </div>
+
+      <div class="analysis-pipeline-container">
+        <div class="analysis-step-card">
+          <span class="step-badge">01</span>
+          <h4>UPLOAD CROWD VIDEO</h4>
+          <p>CCTV stream or drone footage ingestion</p>
+        </div>
+        <div class="analysis-arrow">→</div>
+
+        <div class="analysis-step-card">
+          <span class="step-badge">02</span>
+          <h4>ANALYZE</h4>
+          <p>Optical flow & temporal blob velocity tracking</p>
+        </div>
+        <div class="analysis-arrow">→</div>
+
+        <div class="analysis-step-card">
+          <span class="step-badge">03</span>
+          <h4>CROWD LEVEL</h4>
+          <p>Categorized into Low, Moderate, High, or Critical</p>
+        </div>
+        <div class="analysis-arrow">→</div>
+
+        <div class="analysis-step-card">
+          <span class="step-badge">04</span>
+          <h4>PREDICTION</h4>
+          <p>Forecasts pressure 15–30 minutes forward</p>
+        </div>
+        <div class="analysis-arrow">→</div>
+
+        <div class="analysis-step-card">
+          <span class="step-badge">05</span>
+          <h4>RECOMMENDATION</h4>
+          <p>Calculates gate diversions & safe alternative routes</p>
+        </div>
+        <div class="analysis-arrow">→</div>
+
+        <div class="analysis-step-card">
+          <span class="step-badge">06</span>
+          <h4>OPERATOR ACTION</h4>
+          <p>Organizers approve & dispatch interventions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SAFETY & RAPID EMERGENCY RESPONSE (Section 18) -->
+    <section class="safety-section" id="safety">
+      <div class="section-header-center">
+        <h2 class="section-title">PUBLIC SAFETY & CRISIS RESPONSE</h2>
+        <p class="section-subtitle">Dedicated triage pathways protecting pilgrims during peak surges.</p>
+      </div>
+
+      <div class="safety-cards-grid">
+        <div class="safety-card card-sos">
+          <div class="sc-icon sc-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <h3>SOS Emergency Trigger</h3>
+          <p>One-touch distress broadcast alerting nearby field marshals with live GPS coordinates.</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="sc-icon sc-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20" />
+            </svg>
+          </div>
+          <h3>Medical Help Centers</h3>
+          <p>Real-time routing to nearest first-aid posts, defibrillator stations, and mobile ambulances.</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="sc-icon sc-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Police & Paramilitary Help</h3>
+          <p>Direct liaison with Rapid Action Force, local police booths, and missing person kiosks.</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="sc-icon sc-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <h3>Nearest Safe Place</h3>
+          <p>Calculates lowest-density evacuation zones and safe open holding areas within walking radius.</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="sc-icon sc-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3>I'M STUCK Signal</h3>
+          <p>Reports crowd standstills without triggering full medical emergency, feeding congestion models.</p>
+        </div>
+
+        <div class="safety-card">
+          <div class="sc-icon sc-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+          </div>
+          <h3>Share Live Coordinates</h3>
+          <p>Generates compact SMS/WhatsApp geolinks for family groups to stay connected in crowded zones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ZERO-CONNECTIVITY RESILIENCE & OFFLINE MODE (Section 19) -->
+    <section class="offline-section">
+      <div class="offline-container-card">
+        <div class="offline-header">
+          <div class="offline-badge-pill" [class.badge-offline]="offlineSimulated">
+            <span class="offline-dot"></span>
+            <span>{{ offlineSimulated ? 'OFFLINE MODE (ACTIVE)' : 'NETWORK CONNECTED' }}</span>
+          </div>
+          <button class="btn-toggle-offline" (click)="toggleOfflineMode()">
+            {{ offlineSimulated ? 'Reconnect Network' : 'Simulate Network Drop' }}
+          </button>
+        </div>
+
+        <div class="offline-grid">
+          <div class="offline-text-col">
+            <h2 class="offline-heading">OFFLINE MODE RESILIENCE</h2>
+            <p class="offline-desc">
+              During high-density cellular outages, PRAVAAH operates autonomously using IndexedDB client caches.
+            </p>
+
+            <div class="cached-items-list">
+              <div class="ci-item"><span class="ci-check">✓</span> Cached Vector Base Maps</div>
+              <div class="ci-item"><span class="ci-check">✓</span> Gates & Venue Boundaries</div>
+              <div class="ci-item"><span class="ci-check">✓</span> Crowd Pressure Zones</div>
+              <div class="ci-item"><span class="ci-check">✓</span> Emergency & Medical Hubs</div>
+              <div class="ci-item"><span class="ci-check">✓</span> Safe Route Calculations</div>
+              <div class="ci-item"><span class="ci-check">✓</span> Last-Known Telemetry Snapshot</div>
+            </div>
+
+            <!-- Sync State Indicator -->
+            <div class="sync-status-box">
+              <span class="sync-lbl">Sync Engine:</span>
+              <span class="sync-val" *ngIf="syncState === 'cached'">OFFLINE MODE (Local Cache)</span>
+              <span class="sync-val text-warning" *ngIf="syncState === 'syncing'">SYNCING TELEMETRY → REPLAYING
+                EVENTS...</span>
+              <span class="sync-val text-success" *ngIf="syncState === 'synced'">SYNC COMPLETE (All Data Fresh)</span>
+            </div>
+          </div>
+
+          <div class="offline-visual-col">
+            <div class="offline-cache-card">
+              <div class="occ-header">
+                <span>CLIENT STORAGE STATUS</span>
+                <span class="occ-badge">100% READY</span>
+              </div>
+              <div class="occ-storage-bar">
+                <span class="occ-bar-fill" style="width: 100%"></span>
+              </div>
+              <div class="occ-meta">
+                <span>Prayagraj Offline Pack: <strong>24.6 MB</strong></span>
+                <span>Storage: <strong>IndexedDB Persistent</strong></span>
+              </div>
+              <div class="occ-actions">
+                <span class="occ-icon">📡</span>
+                <span class="occ-note">Automatic background synchronization resumes the instant 4G/Wi-Fi signal
+                  returns.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. JANTAR MANTAR NO-CAMERA MODE (Section 20) -->
+    <section class="jantar-mantar-section">
+      <div class="jantar-card">
+        <div class="jantar-header">
+          <div class="jantar-badge">
+            <span class="jb-dot"></span>
+            <span>NO LIVE CROWD DATA (RESTRICTED AIRSPACE)</span>
+          </div>
+          <span class="jantar-mode-tag">JANTAR MANTAR MODE</span>
+        </div>
+
+        <h2 class="jantar-title">CAMERA-FREE CROWD ORCHESTRATION</h2>
+        <p class="jantar-desc">
+          For historical monuments, restricted heritage sites, and zero-CCTV environments where cameras and drones are
+          prohibited, PRAVAAH operates without camera surveillance using alternate decentralized signals.
+        </p>
+
+        <div class="jantar-features-grid">
+          <div class="jf-item">
+            <span class="jf-icon">👤</span>
+            <h4>Operator Field Reports</h4>
+            <p>On-ground volunteers submit manual crowd density observations.</p>
+          </div>
+          <div class="jf-item">
+            <span class="jf-icon">📱</span>
+            <h4>Visitor Self-Reporting</h4>
+            <p>Aggregated pilgrim telemetry and congestion feedback.</p>
+          </div>
+          <div class="jf-item">
+            <span class="jf-icon">🗺️</span>
+            <h4>Configured Geo-Zones</h4>
+            <p>Fixed capacity thresholds modeled by historical gathering data.</p>
+          </div>
+          <div class="jf-item">
+            <span class="jf-icon">🚪</span>
+            <h4>Gate Turnstile Counters</h4>
+            <p>Turnstile and gate check-in counts without visual recording.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. EVENT VIDEO ARCHITECTURAL SEPARATION (Section 21) -->
+    <section class="video-separation-section">
+      <div class="section-header-center">
+        <h2 class="section-title">VIDEO ARCHITECTURE SEPARATION</h2>
+        <p class="section-subtitle">Strict system boundaries ensure clarity between decorative and operational video
+          feeds.</p>
+      </div>
+
+      <div class="video-architecture-grid">
+        <div class="va-card">
+          <div class="va-badge badge-intro">01 · DECORATIVE</div>
+          <h3>INTRO BACKGROUND VIDEO</h3>
+          <p>Silent, full-screen atmospheric backdrop providing visual scale. Never represented as a live sensor.</p>
+        </div>
+
+        <div class="va-card">
+          <div class="va-badge badge-event">02 · EVENT VIDEO</div>
+          <h3>EVENT VIDEO ARCHIVE</h3>
+          <p>Curated official video summaries and recorded event briefings stored in the event database.</p>
+        </div>
+
+        <div class="va-card">
+          <div class="va-badge badge-camera">03 · OPERATIONAL</div>
+          <h3>LIVE CAMERA FEEDS</h3>
+          <p>Geospatially mapped CCTV / drone streams with simulated or live optical flow analytics.</p>
+        </div>
+
+        <div class="va-card">
+          <div class="va-badge badge-analysis">04 · STUDIO</div>
+          <h3>CROWD ANALYSIS VIDEO</h3>
+          <p>Dedicated upload studio for testing optical flow algorithms on custom footage.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. CLEAN BOTTOM STATUS FOOTER -->
+  <footer class="landing-bottom-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand-title">PRAVAAH</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-tagline">Intelligent Crowd & Event Orchestration Platform</span>
+      </div>
+
+      <div class="footer-center">
+        <span class="footer-engine-tag">Engine: Angular 22 · Microsoft SQL Server 2022 · Socket.IO · Leaflet GIS</span>
+      </div>
+
+      <div class="footer-right">
+        <a routerLink="/login" class="footer-login-btn">Operator / Visitor Sign In →</a>
+      </div>
+    </div>
+  </footer>
+</div>

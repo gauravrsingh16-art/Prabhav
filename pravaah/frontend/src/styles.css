@@ -1,0 +1,333 @@
+/* ============================================================================
+   PRAVAAH — Intelligent Crowd & Event Orchestration
+   Global Design System & Tokens
+   ============================================================================ */
+
+@import "leaflet/dist/leaflet.css";
+
+/* Fonts: Inter / System font stack */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Base Light Tokens (default visitor view) */
+  --background: #fafafa;
+  --surface: #ffffff;
+  --surface-muted: #f4f4f5;
+  --border: #e4e4e7;
+  --foreground: #18181b;
+  --foreground-muted: #71717a;
+  --accent: #18181b;
+  --accent-foreground: #ffffff;
+
+  /* Risk States */
+  --risk-low: #16a34a;
+  --risk-low-bg: #f0fdf4;
+  --risk-medium: #ca8a04;
+  --risk-medium-bg: #fefce8;
+  --risk-high: #ea580c;
+  --risk-high-bg: #fff7ed;
+  --risk-critical: #dc2626;
+  --risk-critical-bg: #fef2f2;
+}
+
+/* Operator & Dark Command Center Theme */
+.operator-theme, [data-theme="dark"], body.dark {
+  --background: #0b0d10;
+  --surface: #14171b;
+  --surface-muted: #1b1f24;
+  --border: #262b31;
+  --foreground: #e8eaed;
+  --foreground-muted: #9aa1a9;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+
+  --risk-low: #22c55e;
+  --risk-low-bg: rgba(34, 197, 94, 0.12);
+  --risk-medium: #eab308;
+  --risk-medium-bg: rgba(234, 179, 8, 0.12);
+  --risk-high: #f97316;
+  --risk-high-bg: rgba(249, 115, 22, 0.12);
+  --risk-critical: #ef4444;
+  --risk-critical-bg: rgba(239, 68, 68, 0.14);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Tabular Numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Animations */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: 0.26s ease-out both fade-up;
+}
+
+@keyframes page-in {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-page-in {
+  animation: 0.2s ease-out both page-in;
+}
+
+@keyframes brand-letter-in {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.brand-letter {
+  opacity: 0;
+  display: inline-block;
+  animation: 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards brand-letter-in;
+}
+
+@keyframes brand-underline-sweep {
+  0% {
+    opacity: 0.9;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scaleX(1);
+  }
+}
+
+.brand-underline {
+  transform-origin: 0;
+  opacity: 0.35;
+  animation: 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.38s forwards brand-underline-sweep;
+  transform: scaleX(0);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+.app-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.app-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.app-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* ============================================================================
+   Leaflet Real Map Styling & Dark Mode Inversion Filter
+   ============================================================================ */
+.leaflet-container {
+  background: var(--surface-muted) !important;
+  font-family: var(--font-sans) !important;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.operator-theme .leaflet-tile-pane,
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert() hue-rotate(180deg) brightness(0.92) contrast(0.88) saturate(0.7);
+}
+
+#crowdLeafletMap .leaflet-tile-pane,
+.realistic-map-wrapper .leaflet-tile-pane,
+.leaflet-map-element .leaflet-tile-pane {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--foreground) !important;
+  border-bottom: 1px solid var(--border) !important;
+  transition: background 0.15s ease;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--surface-muted) !important;
+}
+
+.leaflet-control-attribution {
+  background: var(--surface) !important;
+  color: var(--foreground-muted) !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 4px;
+  margin: 4px !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
+.leaflet-tooltip {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--foreground) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: var(--border) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--surface) !important;
+}
+
+/* Custom Map Overlay Chips */
+.meho-zone-chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  align-items: baseline;
+  gap: 5px;
+  padding: 2px 7px;
+  font-size: 10px;
+  line-height: 1.4;
+  display: inline-flex;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.meho-point-label {
+  background: var(--surface);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  opacity: 0.95;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 10px;
+  line-height: 1.3;
+  display: inline-block;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Global utility badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.badge-low {
+  background-color: var(--risk-low-bg);
+  color: var(--risk-low);
+}
+
+.badge-medium {
+  background-color: var(--risk-medium-bg);
+  color: var(--risk-medium);
+}
+
+.badge-high {
+  background-color: var(--risk-high-bg);
+  color: var(--risk-high);
+}
+
+.badge-critical {
+  background-color: var(--risk-critical-bg);
+  color: var(--risk-critical);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
